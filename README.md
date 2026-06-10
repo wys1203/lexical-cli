@@ -131,19 +131,19 @@ Output:
 lexical-cli tui input.json
 ```
 
-Opens an interactive inspector:
+Opens an interactive inspector with a node tree, live preview, and warnings:
 
-```text
-Lexical Tree                    Markdown Preview
--------------------------------- ----------------------------------
-root                             # Heading
-|-- heading                      
-|   `-- text "Heading"           Paragraph with **bold** text.
-`-- paragraph                    
-    `-- text "Paragraph..."      - Item one
+![lexical-cli TUI demo](docs/demo.gif)
 
-q quit · tab focus · ↑/↓ move · w warnings · s save · ? help
-```
+The tree pane shows the full Lexical node structure next to the rendered
+Markdown preview:
+
+![TUI main view](docs/tui-main.png)
+
+Unsupported nodes surface in a dedicated warnings pane (`w`) with their exact
+node paths:
+
+![TUI warnings view](docs/tui-warnings.png)
 
 ### Key bindings
 
@@ -156,6 +156,8 @@ q quit · tab focus · ↑/↓ move · w warnings · s save · ? help
 | `w` | Toggle the warnings pane. |
 | `s` | Save/export the preview to a file. |
 | `?` | Toggle help. |
+
+![TUI help overlay](docs/tui-help.png)
 
 Export writes the current preview to a file derived from the input name and
 chosen format (e.g. `input.json` → `input.md`). The TUI detects non-interactive
@@ -199,6 +201,13 @@ intentional output change:
 
 ```sh
 go test ./internal/markdown -update
+```
+
+README screenshots and the demo GIF are recorded with
+[vhs](https://github.com/charmbracelet/vhs):
+
+```sh
+go build -o /tmp/lexical-cli ./cmd/lexical-cli && vhs docs/demo.tape
 ```
 
 The parser (`internal/lexical`) and renderer (`internal/markdown`) are
