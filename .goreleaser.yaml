@@ -1,0 +1,51 @@
+version: 2
+
+project_name: lexical-cli
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: lexical-cli
+    main: ./cmd/lexical-cli
+    binary: lexical-cli
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X github.com/wys1203/lexical-cli/internal/cli.Version={{.Version}}
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - formats: [tar.gz]
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+# Uncomment and configure once a Homebrew tap repository exists.
+# brews:
+#   - repository:
+#       owner: wys1203
+#       name: homebrew-tap
+#     homepage: "https://github.com/wys1203/lexical-cli"
+#     description: "Convert Meta Lexical EditorState JSON to Markdown"
+#     license: "MIT"

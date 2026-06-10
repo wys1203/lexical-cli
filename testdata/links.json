@@ -1,0 +1,21 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          { "type": "text", "format": 0, "text": "See " },
+          {
+            "type": "link",
+            "url": "https://lexical.dev",
+            "children": [
+              { "type": "text", "format": 0, "text": "Lexical" }
+            ]
+          },
+          { "type": "text", "format": 0, "text": " for details." }
+        ]
+      }
+    ]
+  }
+}

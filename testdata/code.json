@@ -1,0 +1,18 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "code",
+        "language": "go",
+        "children": [
+          { "type": "code-highlight", "format": 0, "text": "func main() {" },
+          { "type": "linebreak" },
+          { "type": "code-highlight", "format": 0, "text": "    println(\"hi\")" },
+          { "type": "linebreak" },
+          { "type": "code-highlight", "format": 0, "text": "}" }
+        ]
+      }
+    ]
+  }
+}

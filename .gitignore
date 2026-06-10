@@ -1,0 +1,14 @@
+# Binaries
+/lexical-cli
+/dist/
+*.exe
+
+# Test / coverage artifacts
+*.out
+coverage.txt
+
+# OS / editor
+.DS_Store
+
+# Local Claude Code session config
+.claude/

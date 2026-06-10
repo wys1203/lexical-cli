@@ -1,0 +1,73 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "list",
+        "listType": "bullet",
+        "start": 1,
+        "tag": "ul",
+        "children": [
+          {
+            "type": "listitem",
+            "value": 1,
+            "children": [
+              { "type": "text", "format": 0, "text": "Item one" }
+            ]
+          },
+          {
+            "type": "listitem",
+            "value": 2,
+            "children": [
+              { "type": "text", "format": 0, "text": "Item two" },
+              {
+                "type": "list",
+                "listType": "number",
+                "start": 1,
+                "tag": "ol",
+                "children": [
+                  {
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      { "type": "text", "format": 0, "text": "Nested one" }
+                    ]
+                  },
+                  {
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      { "type": "text", "format": 0, "text": "Nested two" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "listType": "number",
+        "start": 1,
+        "tag": "ol",
+        "children": [
+          {
+            "type": "listitem",
+            "value": 1,
+            "children": [
+              { "type": "text", "format": 0, "text": "First" }
+            ]
+          },
+          {
+            "type": "listitem",
+            "value": 2,
+            "children": [
+              { "type": "text", "format": 0, "text": "Second" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "quote",
+        "children": [
+          { "type": "text", "format": 0, "text": "To be, or not to be." },
+          { "type": "linebreak" },
+          { "type": "text", "format": 0, "text": "That is the question." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "heading",
+        "tag": "h2",
+        "children": [{ "type": "text", "format": 0, "text": "Report" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "type": "text", "format": 0, "text": "A line." },
+          { "type": "linebreak" },
+          { "type": "text", "format": 0, "text": "Another line." }
+        ]
+      },
+      { "type": "horizontalrule" },
+      {
+        "type": "table",
+        "children": [
+          {
+            "type": "tablerow",
+            "children": [
+              { "type": "tablecell", "children": [{ "type": "text", "format": 1, "text": "Name" }] },
+              { "type": "tablecell", "children": [{ "type": "text", "format": 1, "text": "Score" }] }
+            ]
+          },
+          {
+            "type": "tablerow",
+            "children": [
+              { "type": "tablecell", "children": [{ "type": "text", "format": 0, "text": "Ada" }] },
+              { "type": "tablecell", "children": [{ "type": "text", "format": 0, "text": "99" }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "type": "image", "src": "diagram.png", "altText": "Diagram" }
+        ]
+      }
+    ]
+  }
+}
