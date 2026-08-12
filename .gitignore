@@ -12,3 +12,9 @@ coverage.txt
 
 # Local Claude Code session config
 .claude/
+
+# Local tool session artifacts
+.playwright-cli/
+
+# Throwaway prototypes (capture on a prototype/* branch if worth keeping)
+prototype/
