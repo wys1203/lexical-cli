@@ -22,7 +22,11 @@
           { "type": "text", "format": 0, "text": " " },
           { "type": "text", "format": 16, "text": "code" },
           { "type": "text", "format": 0, "text": " " },
-          { "type": "text", "format": 3, "text": "bolditalic" }
+          { "type": "text", "format": 3, "text": "bolditalic" },
+          { "type": "text", "format": 0, "text": " " },
+          { "type": "text", "format": 128, "text": "highlight" },
+          { "type": "text", "format": 0, "text": " " },
+          { "type": "text", "format": 129, "text": "boldhighlight" }
         ]
       }
     ]

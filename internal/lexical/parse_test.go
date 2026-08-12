@@ -72,9 +72,13 @@ func TestTextFormatBitmask(t *testing.T) {
 	if !bold.HasFormat(FormatBold) {
 		t.Errorf("expected bold format set, TextFormat=%d", bold.TextFormat)
 	}
-	boldItalic := para.Children[len(para.Children)-1]
+	boldItalic := para.Children[10]
 	if !boldItalic.HasFormat(FormatBold) || !boldItalic.HasFormat(FormatItalic) {
 		t.Errorf("expected bold+italic, TextFormat=%d", boldItalic.TextFormat)
+	}
+	boldHighlight := para.Children[len(para.Children)-1]
+	if !boldHighlight.HasFormat(FormatBold) || !boldHighlight.HasFormat(FormatHighlight) {
+		t.Errorf("expected bold+highlight, TextFormat=%d", boldHighlight.TextFormat)
 	}
 }
 

@@ -40,7 +40,7 @@ func TestParagraph(t *testing.T) {
 
 func TestHeadingAndFormats(t *testing.T) {
 	res := convertMD(t, "formats.json")
-	want := "# Title\n\n**bold** *italic* ~~strike~~ <u>underline</u> `code` ***bolditalic***\n"
+	want := "# Title\n\n**bold** *italic* ~~strike~~ <u>underline</u> `code` ***bolditalic*** ==highlight== **==boldhighlight==**\n"
 	if res.Output != want {
 		t.Errorf("got:\n%q\nwant:\n%q", res.Output, want)
 	}
@@ -143,7 +143,7 @@ func TestTextFormat(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := "Title\n\nbold italic strike underline code bolditalic\n"
+	want := "Title\n\nbold italic strike underline code bolditalic highlight boldhighlight\n"
 	if res.Output != want {
 		t.Errorf("got:\n%q\nwant:\n%q", res.Output, want)
 	}
@@ -162,6 +162,12 @@ func TestHTMLFormat(t *testing.T) {
 	}
 	if !strings.Contains(res.Output, "<code>code</code>") {
 		t.Errorf("missing code, got %q", res.Output)
+	}
+	if !strings.Contains(res.Output, "<mark>highlight</mark>") {
+		t.Errorf("missing highlight, got %q", res.Output)
+	}
+	if !strings.Contains(res.Output, "<strong><mark>boldhighlight</mark></strong>") {
+		t.Errorf("missing bold+highlight, got %q", res.Output)
 	}
 }
 

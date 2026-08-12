@@ -153,6 +153,9 @@ func htmlApplyFormat(n *lexical.Node) string {
 	if n.HasFormat(lexical.FormatCode) {
 		out = "<code>" + out + "</code>"
 	}
+	if n.HasFormat(lexical.FormatHighlight) {
+		out = "<mark>" + out + "</mark>"
+	}
 	if n.HasFormat(lexical.FormatStrikethrough) {
 		out = "<del>" + out + "</del>"
 	}

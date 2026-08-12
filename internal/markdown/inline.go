@@ -76,7 +76,10 @@ func applyFormat(n *lexical.Node) string {
 	}
 
 	// Apply from innermost to outermost. Underline has no Markdown equivalent,
-	// so it uses an HTML tag.
+	// so it uses an HTML tag; highlight uses the extended-Markdown ==…== marker.
+	if n.HasFormat(lexical.FormatHighlight) {
+		out = "==" + out + "=="
+	}
 	if n.HasFormat(lexical.FormatStrikethrough) {
 		out = "~~" + out + "~~"
 	}
